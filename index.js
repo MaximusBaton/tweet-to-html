@@ -68,8 +68,13 @@ function processUrls(urls, tweetObj) {
     var urlToReplace = tweetObj.text.substring(indices[0],indices[1]);
 
     if(index === urls.length-1 && tweetObj.quoted_status) {
+      let quotedContainerClass = 'quoted-tweet';
+      if(options && options.quotedContainerClass) {
+        quotedContainerClass = options.quotedContainerClass;
+      }
+    
       quotedTweetHtml = parseTweets(tweetObj.quoted_status).html;
-      quotedTweetHtml = `<div class="quoted-tweet">${quotedTweetHtml}</div>`
+      quotedTweetHtml = `<div class="${quotedContainerClass}">${quotedTweetHtml}</div>`
     }
 
     var finalText = quotedTweetHtml || urlObj.display_url.link(urlObj.expanded_url);

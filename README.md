@@ -1,3 +1,6 @@
+**NB**: this is a fork of [tweet-to-html](https://github.com/blessenm/tweet-to-html)
+
+
 # tweet-to-html
 
 [![Build Status](https://travis-ci.org/blessenm/tweet-to-html.svg?branch=master)](https://travis-ci.org/blessenm/tweet-to-html)
@@ -12,7 +15,7 @@ http://blessanmathew.com/tweet-to-html
 ## Installation
 
 ```
-npm install tweet-to-html -S
+$ npm install --save https://github.com/MaximusBaton/tweet-to-html.git
 ```
 
 ## Usage
