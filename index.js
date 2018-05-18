@@ -46,7 +46,7 @@ function parseTweet(tweetObj) {
 
 function processHashTags(tags, tweetObj) {
   tags.forEach((tagObj) => {
-    var anchor = ('#' + tagObj.text).link('http://twitter.com/hashtag/' + tagObj.text);
+    var anchor = ('#' + tagObj.text).link('//twitter.com/hashtag/' + tagObj.text);
     tweetObj.html = tweetObj.html.replace('#' + tagObj.text, anchor);
   });
 }
@@ -55,7 +55,7 @@ function processSymbols(symbols, tweetObj) {}
 
 function processUserMentions(users, tweetObj) {
   users.forEach((userObj) => {
-    var anchor = ('@' + userObj.screen_name).link('http://twitter.com/' + userObj.screen_name);
+    var anchor = ('@' + userObj.screen_name).link('//twitter.com/' + userObj.screen_name);
     var regex = new RegExp('@' + userObj.screen_name, 'gi' );
     tweetObj.html = tweetObj.html.replace(regex, anchor);
   });
