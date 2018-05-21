@@ -24,6 +24,9 @@ function parseTweet(tweetObj) {
   //Copying text value to a new property html. The final output will be set to this property
   tweetObj.html = tweetObj.text;
 
+  //Process Emoji's
+  processEmoji(tweetObj);
+
   //Process entities
   if(Object.getOwnPropertyNames(entities).length) {
     Object.keys(entities).forEach((entity) => {
@@ -37,9 +40,6 @@ function parseTweet(tweetObj) {
       }
     });
   }
-
-  //Process Emoji's
-  processEmoji(tweetObj);
 
   return tweetObj;
 }
